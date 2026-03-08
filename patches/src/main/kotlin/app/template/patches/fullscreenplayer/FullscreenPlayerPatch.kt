@@ -34,7 +34,7 @@ val disableFullscreenOnLandscapeStartPatch = bytecodePatch(
                 if-nez v0, :cond_skip
 
                 # Skip if target state is not MAXIMIZED_NOW_PLAYING
-                sget-object v0, Ldefpackage/mxn;->MAXIMIZED_NOW_PLAYING:Ldefpackage/mxn;
+                sget-object v0, Lmxn;->MAXIMIZED_NOW_PLAYING:Lmxn;
                 if-ne p1, v0, :cond_skip
 
                 # Skip if Y() is true (screen is considered large enough by the app)
@@ -52,8 +52,8 @@ val disableFullscreenOnLandscapeStartPatch = bytecodePatch(
                 if-ne v0, v1, :cond_skip
 
                 # Landscape + short screen + MAXIMIZED_NOW_PLAYING: stay maximized, don't go fullscreen
-                sget-object v0, Ldefpackage/mxn;->MAXIMIZED_NOW_PLAYING:Ldefpackage/mxn;
-                invoke-virtual {p0, v0}, Lcom/google/android/apps/youtube/music/watchpage/mpp/MppWatchWhileLayout;->M(Ldefpackage/mxn;)V
+                sget-object v0, Lmxn;->MAXIMIZED_NOW_PLAYING:Lmxn;
+                invoke-virtual {p0, v0}, Lcom/google/android/apps/youtube/music/watchpage/mpp/MppWatchWhileLayout;->M(Lmxn;)V
                 return-void
 
                 :cond_skip
