@@ -1,4 +1,29 @@
 {
-  "version": "",
-  "patches": []
+  "version": "1.0.0",
+  "patches": [
+    {
+      "name": "Disable fullscreen player on landscape start",
+      "description": "Prevents the player from opening in fullscreen when started in landscape mode on wide/short screens such as car displays.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.google.android.apps.youtube.music": [
+          "8.40.54"
+        ]
+      },
+      "options": []
+    },
+    {
+      "name": "Example Patch",
+      "description": "Example patch to start with.",
+      "use": true,
+      "dependencies": [],
+      "compatiblePackages": {
+        "com.example.app": [
+          "1.0.0"
+        ]
+      },
+      "options": []
+    }
+  ]
 }
